@@ -83,6 +83,8 @@ public class UserCommentsApp {
         try {
             FileWriter writer = new FileWriter(fileName);
             gson.toJson(comments, writer);
+            writer.flush();
+            writer.close();
 
         } catch (IOException e) {
             e.printStackTrace();
